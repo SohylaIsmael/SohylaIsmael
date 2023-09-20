@@ -1,0 +1,8 @@
+package calculator;
+
+class Robot extends Operation{
+    
+    public void main(String[] args) {
+        System.out.println("Result = "+mainn());
+    }
+}
