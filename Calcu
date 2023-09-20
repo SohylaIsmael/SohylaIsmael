@@ -2,6 +2,7 @@ package calculator;
 
 //  To avert being unable to run file, this is the main class
 public class Calcu extends Operation{
+
     public static void main(String[] args) {
         System.out.println("Result = "+main());
     }
