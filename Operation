@@ -49,20 +49,22 @@ public class Operation{
         result = calc(sign, num1, num2, num3);
         return result;
     }
-    public void mainn(){
+    static double mainn(){
+        Operation obj= new Operation();
         double v= main();
     Scanner input= new Scanner(System.in);
         boolean prob;
         System.out.println("Would you like to make one more robot step? Enter 'True' or 'False'");
             prob = input.nextBoolean();
-            
         if(prob == true)
-            System.out.println("result="+robo(v));
-        else
-            System.out.println("result="+v);
+            return obj.getInitial();
+        else{
+            return v;}
+       
     }
-    public double robo(double res) {
-        double r = res+2;
-        return r;
+    double initial= main()+2;
+
+    double getInitial() {
+        return initial;
     }
 }
