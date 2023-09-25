@@ -1,0 +1,43 @@
+package com.mycompany.buff;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Buff {
+
+    public static void main(String[] args) {
+
+        try {
+            
+            BufferedReader reader= new BufferedReader(new FileReader("data.txt"));
+            String line1= reader.readLine();
+            String line2= reader.readLine();
+            //System.out.println(line1);
+            //System.out.println(line2); //I've printed them to copy/paste name&password
+            logging(line1, line2);
+            reader.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Buff.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Buff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public static void logging(String name, String pswrd){
+        Scanner in = new Scanner(System.in);
+        Scanner put = new Scanner(System.in);
+        String a, b;
+        System.out.println("enter name");
+            a= in.next();
+        System.out.println("enter password");
+            b= put.next();
+        if(a == name && b == pswrd)
+            System.out.println("successful proccess");
+        else
+            System.out.println("failed");
+    }
+}
