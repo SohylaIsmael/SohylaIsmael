@@ -35,7 +35,7 @@ public class Buff {
             a= in.next();
         System.out.println("enter password");
             b= put.next();
-        if(a == name && b == pswrd)
+        if(name.startsWith(name) && pswrd.startsWith(pswrd) ) 
             System.out.println("successful proccess");
         else
             System.out.println("failed");
