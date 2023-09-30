@@ -30,6 +30,30 @@ public class Buff {
         } catch (IOException ex) {
             Logger.getLogger(Buff.class.getName()).log(Level.SEVERE, null, ex);
         }
+String filePath = "D://output.txt";
+      Scanner sc;
+        try {
+            sc = new Scanner(new File(filePath));
+            StringBuffer buffer = new StringBuffer();
+      while (sc.hasNextLine()) {
+         buffer.append(sc.nextLine()+System.lineSeparator());
+      }
+      String fileContents = buffer.toString();
+      System.out.println("Contents of the file: "+fileContents);
+      sc.close();
+      String oldLine = "sohyla";
+      String newLine = "up";
+      //Replacing the old line with new line
+      fileContents = fileContents.replace(oldLine, newLine);
+      FileWriter writer = new FileWriter(filePath);
+      System.out.println("new data: "+fileContents);
+      writer.append(fileContents);
+      writer.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Buff.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Buff.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     public static void logging(String name, String pswrd){
         Scanner in = new Scanner(System.in);
